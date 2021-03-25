@@ -1,0 +1,41 @@
+﻿@model IEnumerable<landingP.Models.Usuario>
+
+@{ ViewBag.Title = "Registrados";
+                Layout = "~/Views/Shared/partials.cshtml"; }
+
+
+    <section style="min-height: 82vh;">
+        <table class="table">
+            <thead>
+                <tr class="table-success">
+
+                    <th scope="col">@Html.DisplayNameFor(model => model.Nombre)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Correo)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Telefono)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Mensage)</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Correo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mensage)
+                    </td>
+                </tr>
+    }
+            </tbody>
+        </table>
+    </section>
+
